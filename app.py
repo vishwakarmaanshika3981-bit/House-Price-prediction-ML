@@ -22,14 +22,15 @@ for i in X:
 scaler = StandardScaler()
 scaled_X = scaler.fit_transform(X)
 final_value = scaler.transform([all_value])
-mode = RandomForestRegressor()
+model = st.cache(RandomForestRegressor)()
 model.fit(X,y)
 house_price = model.predict(final_value)
 with st.spinner('Predicting House price'):
     time.sleep(1)
-    msg= f'''House price is : $ (house_price*100000)'''
+    msg= f'''House price is : $ {round(house_price*100000,2)}'''
     st.success(msg)
     st.markdown('''**design and developed by:Anshika**''')
+
 
 
 
