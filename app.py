@@ -13,6 +13,7 @@ st.sidebar.title('🏠House Price prediction using ML')
 st. sidebar.image('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrEZFyB3eYVFx4fiwANh-wSdkFGVBmth2Gsg&s')
 all_value=[]
 for i in X:
-    ans =st.sidebar.silder(f'select{i} value')
+    ans =st.sidebar.slider(f'select{i} value')
     all_value.append(ans)
 st.write(all_value)
+
